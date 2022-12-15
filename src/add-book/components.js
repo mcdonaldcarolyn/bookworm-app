@@ -1,4 +1,4 @@
-import { useSate } from 'react';
+import { useState } from 'react';
 import { Button, Card, FloatingLabel, Form } from 'react-bootstrap';
 
 export function AddBook(props) {
@@ -37,7 +37,27 @@ export function AddBook(props) {
         <Card.Header>Add a new Book</Card.Header>
         <Card.Body className='card-body'>
           <Form onSubmit={handleSubmit}>
-            
+            <Form.Group>
+              <FloatingLabel label="Title">
+                <Form.Control id="inputBookTitle"
+                  type="text"
+                  name="title"
+                  value={book.title}
+                  onChange={handleChange}
+                  required/>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Check
+              type="checkbox"
+              name="finished"
+              label="Finished?"
+              checked={book.finished}
+              onChange={handleChange} />
+            <div className="d-grid">
+              <Button variant="primary" type="submit">
+                Save
+              </Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>
