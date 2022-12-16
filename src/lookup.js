@@ -7,5 +7,20 @@ async function getListFromAPI(endpoint) {
 }
 
 export async function lookupUnfinishedList() {
-  let response = await getListFromAPI('unfinshed/')
+  let response = await getListFromAPI('unfinshed/');
+  return response.data;
+}
+
+export async function lookupFinishedList() {
+  let response = await getListFromAPI('finished/');
+  return response.data;
+}
+
+export async function lookupSaveBook(book) {
+  let response = await axios.post(BASE_URL, book)
+  return response.data
+}
+
+export async function lookupSetFinished(book, finished) {
+  return await axios.patch(`${BASE_URL}${book.id}/`, { finished: finished });
 }
