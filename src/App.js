@@ -5,8 +5,27 @@ import BookList from './BookList';
 import Favorites from './Favorites';
 import BookInfo from './BookInfo';
 import { AddBook } from './add-book/components';
-import { Book } from './book/components';
+import { Bookshelf } from './book-shelf/components';
+import {deleteBook, }
+
 function App() {
+  const [unfinishedList, setUnfinishedList] = useState([]);
+  const [finshedList, setFinishedList] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      let unfinishedList = await getUnfinishedList()
+      setUnfinishedList(unfinishedList)
+
+      letFinishedList = await getUnfinishedList()
+      setFinishedList(finishedList)
+    }
+    fetchData()
+  }, [])
+
+  const handleAddBook = async (book) => {
+    let savedBook = await saveBook(book)
+  }
   return (
     <div className="App">
       <header className="App-header">
