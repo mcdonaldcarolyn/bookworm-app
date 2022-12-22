@@ -1,6 +1,7 @@
 
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 import BookList from './BookList';
 import Favorites from './Favorites';
 import BookInfo from './BookInfo';
@@ -10,14 +11,14 @@ import { deleteBook, getFinishedList, getUnfinishedList, saveBook, setFinished }
 
 function App() {
   const [unfinishedList, setUnfinishedList] = useState([]);
-  const [finshedList, setFinishedList] = useState([]);
+  const [finishedList, setFinishedList] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       let unfinishedList = await getUnfinishedList()
       setUnfinishedList(unfinishedList)
 
-      letFinishedList = await getUnfinishedList()
+      let FinishedList = await getUnfinishedList()
       setFinishedList(finishedList)
     }
     fetchData()

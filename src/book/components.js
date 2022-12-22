@@ -1,4 +1,4 @@
-import { Col, Row, Button } from "react-boostrap";
+import { Col, Row, Button } from "react-bootstrap";
 
 export default function Book(props) {
   const { book } = props;

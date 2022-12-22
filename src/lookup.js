@@ -21,6 +21,10 @@ export async function lookupSaveBook(book) {
   return response.data
 }
 
+export async function lookupDeleteBook(book) {
+  await axios.delete(`${BASE_URL}${book.id}/`)
+}
+
 export async function lookupSetFinished(book, finished) {
   return await axios.patch(`${BASE_URL}${book.id}/`, { finished: finished });
 }
