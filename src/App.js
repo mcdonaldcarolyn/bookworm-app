@@ -25,13 +25,16 @@ function App() {
 
   const handleAddBook = async (book) => {
     let savedBook = await saveBook(book)
+    if (savedBook.finished) {
+      setFinishedList([[]])
+    }
   }
   return (
     <div className="App">
       <header className="App-header">
         Hello Bookworms 
         <AddBook />
-        <Book/>
+        <Bookshelf/>
         <BookList />
         <Favorites />
         <BookInfo/>
