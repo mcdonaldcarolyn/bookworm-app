@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import BookList from "./BookList";
 import Favorites from "./Favorites";
 import BookInfo from "./BookInfo";
-import { AddBook } from "../add-book/components";
+import { AddBook } from "./add-book/components";
 import { Bookshelf } from "./book-shelf/components";
 import {
   deleteBook,
